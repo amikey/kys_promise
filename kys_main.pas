@@ -2104,7 +2104,6 @@ begin
     end
     else if integer(now - next_time) > 0 then
     begin
-
       if (water >= 0) then
       begin
         Inc(water, 6);

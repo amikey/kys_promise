@@ -89,7 +89,7 @@
       <IncludeFiles Value="$(ProjOutDir)"/>
       <Libraries Value=".;\sw\lib;\usr\X11R6\lib"/>
       <OtherUnitFiles Value="lib"/>
-      <UnitOutputDirectory Value=".\tmp"/>
+      <UnitOutputDirectory Value="tmp"/>
     </SearchPaths>
     <Parsing>
       <SyntaxOptions>
