@@ -26,6 +26,8 @@ uses
   bassmidi,
   gl, glext;
 
+function EventFilter(p: pointer; e: PSDL_Event): longint; cdecl;
+
 //音频子程
 procedure InitialMusic;
 procedure PlayMP3(MusicNum, times: integer); overload;
@@ -182,6 +184,26 @@ procedure SwitchFullscreen;
 implementation
 
 uses kys_event;
+
+function EventFilter(p: pointer; e: PSDL_Event): longint; cdecl;
+begin
+  Result := 1;
+  {or (e.type_ = SDL_FINGERMOTION)}
+  case e.type_ of
+    SDL_FINGERUP, SDL_FINGERDOWN, SDL_CONTROLLERAXISMOTION, SDL_CONTROLLERBUTTONDOWN, SDL_CONTROLLERBUTTONUP:
+      Result := 0;
+    SDL_FINGERMOTION:
+      if CellPhone = 0 then
+        Result := 0;
+    sdl_windowevent:
+    begin
+      if e.window.event = SDL_WINDOWEVENT_RESIZED then
+        sdl_getwindowsize(window, @resolutionx, @resolutiony);
+      result := 0;
+    end;
+  end;
+end;
+
 procedure InitialMusic;
 var
   i: integer;

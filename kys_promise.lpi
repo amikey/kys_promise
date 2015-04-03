@@ -60,12 +60,10 @@
       <Unit2>
         <Filename Value="kys_event.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="kys_event"/>
       </Unit2>
       <Unit3>
         <Filename Value="kys_battle.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="kys_battle"/>
       </Unit3>
       <Unit4>
         <Filename Value="kys_engine.pas"/>
@@ -75,7 +73,6 @@
       <Unit5>
         <Filename Value="kys_littlegame.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="kys_littlegame"/>
       </Unit5>
     </Units>
   </ProjectOptions>
